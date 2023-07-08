@@ -1,9 +1,8 @@
 import React from 'react'
 
 function Message({classes,text, userId, date, time}) {
-    const styles = 'flex flex-col space-y-1 w-96 px-2 rounded-md ' + classes
   return (
-    <div className={styles}>
+    <div className={classes}>
         <p className='text-rose-500'>{userId}</p>
         <p className='break-words'>{text}</p>
         <div className='text-end'>

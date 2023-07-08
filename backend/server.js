@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:5173']
-}));
+    origin: 'http://localhost:5173'
+}))
 app.use(express.urlencoded({extended : true}))
 app.use(express.json());
 const server = require('http').createServer(app);
@@ -11,18 +11,16 @@ const { Server } = require('socket.io');
 
 const io = new Server(server,{
     cors: {
-      origin: '*',
+      origin: 'http://localhost:5173',
     }
   });
-  
+
 
 const connection = require('./Connection/connectionManager');
 connection(io);
 
 app.use('/auth', require('./routes/authRoutes'));
 
-
-// app.use(require('./controllers/authController').verifyToken);
 
 app.use((err,req,res,next) => {
     res.status(500).json({

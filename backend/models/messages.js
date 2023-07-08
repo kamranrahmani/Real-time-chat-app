@@ -10,30 +10,24 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull : true
         },
+        roomId: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         text: {
             type: DataTypes.TEXT,
             allowNull : false
         },
-        likes : {
-            type: DataTypes.STRING,
-            allowNull : true
-        },
-        dislikes : {
-            type: DataTypes.STRING,
-            allowNull : true
-        },
-        createionDate : {
-            type: DataTypes.STRING,
-            allowNull : false            
-        },
-        updateDate: {
-            type: DataTypes.STRING,
-            allowNull : true
-        },
-        roomId: {
-            type: DataTypes.STRING,
-            allowNull: true
-        }
+        
+       date: {
+        type: DataTypes.STRING,
+        allowNull: false
+       },
+
+       time: {
+        type: DataTypes.STRING,
+        allowNull: false
+       }
     }, {
         timestamps: false
     })

@@ -65,7 +65,6 @@ async function deleteFriendRequest (item) {
         console.log(err);
     }
 }
-
 async function acceptFriendRequest (item) {
     const friendRequest = await friends.findOne({where: {userId: item.userId, friendId: item.friendId}});
     friendRequest.status = 'ACCEPTED';

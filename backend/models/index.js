@@ -30,7 +30,7 @@ db.users.belongsToMany(db.rooms,{through : 'UsersRooms'});
 db.rooms.belongsToMany(db.users, {through : 'UsersRooms'});
 
 
-sequelize.sync({force:false}).then(()=>{
+db.messages.sync({force:false}).then(()=>{
     console.log(`re-sync done`)
 }
 ).catch((err)=>{
